@@ -16,7 +16,7 @@ while (my $line=<input>)
         print output $line;
 	my @line=split(/;/,$line);
 	
-	my $commandAltitude='curl -H "Accept: application/json" -X GET    https://maps.googleapis.com/maps/api/elevation/json?locations='.$line[7].'%2C'.$line[8].'\&key=AIzaSyBPmxq6ULqUDaIeTfzedPoau4ieHKTAq_E  | grep  elevation   ';
+	my $commandAltitude='curl -H "Accept: application/json" -X GET    https://maps.googleapis.com/maps/api/elevation/json?locations='.$line[7].'%2C'.$line[8].'\&key=<GoogleKey>  | grep  elevation   ';
         print $commandAltitude."\n";
 	my $altitude  = `$commandAltitude`; #These are backticks, to collect the output of the command into the $altitude variable
 	print $altitude."\n";
